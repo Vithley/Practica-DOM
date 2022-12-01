@@ -108,12 +108,12 @@ function updateState() {
     //Guardo los datos para que no se vayan cuando se actualicen
     localStorage.setItem('saveData', JSON.stringify(states));
 
-    render();
+    addDatas();
 }
 
 
 // Creo la función para añadir los datos en sus respectivos sitios
-function render() {
+function addDatas() {
     balanceElement.innerHTML = `${states.balance}€`;
     incomeElement.innerHTML = `${states.income}€`;
     expenseElement.innerHTML = `${states.expense}€`;
