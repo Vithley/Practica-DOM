@@ -3,6 +3,11 @@
     --income: green;
     --expense: red;
 }
+
+* {
+    max-width: 100%;
+}
+
 body {
     font-family: 'Caveat', cursive;
     display: flex;
