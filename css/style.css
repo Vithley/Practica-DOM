@@ -1,5 +1,5 @@
 :root{
-    --box-shadow: 0px 1px 4px 1px rgba(199,199,199,1);
+    --box-shadow: 0px 1px 4px 1px rgb(199, 170, 199);
     --income: green;
     --expense: red;
 }
@@ -14,15 +14,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 }
 
 .app h1 {
     text-align: center;
+    color: rgb(145, 56, 147);
+    font-size: 50px;
 }
 
 h2 {
     text-transform: uppercase;
+    color: darkcyan;
+}
+
+h3 {
+    font-size: 30px;
 }
 
 .balance-container #balance {
