@@ -17,13 +17,14 @@ let amountInputElement = document.querySelector('#amount');
 
 // Función que inicia el programa
 function starTheProgram() {
+    
+    // Guardamos los datos en el localStorage
     let local = JSON.parse(localStorage.getItem('saveData'));
 
     if(local !== null) {
         states = local;
     }
 
-    
     updateState();
     clickBtn();
 }
@@ -47,6 +48,7 @@ function onAddBtnClick() {
         };
         states.transactions.push(transactionIncome);
         updateState();
+
     // Si el valor es menor que cero añadimos un gasto    
     }else if(amount < 0 && name !== '' && amount !== '') {
         let transactionExpense = {
@@ -55,6 +57,7 @@ function onAddBtnClick() {
         };
         states.transactions.push(transactionExpense);
         updateState();
+
     } else {
         alert('Por favor introduce un dato válido');
     }
@@ -102,6 +105,7 @@ function updateState() {
     states.income = income;
     states.expense = expense;
 
+    //Guardo los datos para que no se vayan cuando se actualicen
     localStorage.setItem('saveData', JSON.stringify(states));
 
     render();
@@ -127,8 +131,10 @@ function render() {
         
         containerElement = document.createElement('div');
         amountElement = document.createElement('span');
+
         if(item.type === 'income') {
             amountElement.classList.add('income-amt');
+
         } else if(item.type === 'expense') {
             amountElement.classList.add('expense-amt');
         }
