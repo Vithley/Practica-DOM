@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Nerko+One&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="./css/style.css">
+
+
 <body>
     <div class="app">
         <h1>Control de gastos</h1>
@@ -39,11 +41,11 @@
         </div>
         <div class="form-container">
             <h2>Añadir nueva transacción</h2>
-            <form onsubmit="return false;">
+            <form onsubmit="return false;" id="my-form">
                 <label for="name">Concepto</label>
-                <input id="name" type="text">
+                <input id="name" type="text" placeholder="Ej: Nómina">
                 <label for="amount">Cantidad(negativo-gasto, positivo-ingreso)</label>
-                <input id="amount" type="number">
+                <input id="amount" type="number" placeholder="1000">
                 <button id="addBtn">Añadir transacción</button>
             </form>
         </div>

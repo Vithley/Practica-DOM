@@ -20,6 +20,7 @@ function starTheProgram() {
     
     // Guardamos los datos en el localStorage
     let local = JSON.parse(localStorage.getItem('saveData'));
+    
 
     if(local !== null) {
         states = local;
@@ -107,6 +108,9 @@ function updateState() {
 
     //Guardo los datos para que no se vayan cuando se actualicen
     localStorage.setItem('saveData', JSON.stringify(states));
+    
+    //Reseteo los campos de los input para que aparezcan vacíos
+    document.querySelector('#my-form').reset();
 
     addDatas();
 }
