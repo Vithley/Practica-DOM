@@ -45,7 +45,7 @@ function onAddBtnClick() {
     if(amount > 0 && name !== '' && amount !== '') {
         let transactionIncome = {
             name: nameInputElement.value,
-            amount: parseInt(amountInputElement.value), type: 'income'
+            amount: parseFloat(amountInputElement.value), type: 'income'
         };
         states.transactions.push(transactionIncome);
         updateState();
@@ -54,7 +54,7 @@ function onAddBtnClick() {
     }else if(amount < 0 && name !== '' && amount !== '') {
         let transactionExpense = {
             name: nameInputElement.value,
-            amount: parseInt(amountInputElement.value), type: 'expense'
+            amount: parseFloat(amountInputElement.value), type: 'expense'
         };
         states.transactions.push(transactionExpense);
         updateState();
@@ -67,7 +67,7 @@ function onAddBtnClick() {
 
 // Función para borrar los elementos del listado
 function deleteClick(event) {
-    let id =parseInt(event.target.getAttribute('data-id'));
+    let id =parseFloat(event.target.getAttribute('data-id'));
     let deleteIndex;
 
     for(let i = 0; i < states.transactions.length; i++) {
@@ -102,7 +102,7 @@ function updateState() {
 
     // Añado al ahorro los ingresos más los gastos (lo pongo en positivo, porque los gastos van en negativo)
     balance = income + expense;
-    states.balance = balance;
+    states.balance = balance.toFixed(2);
     states.income = income;
     states.expense = expense;
 
